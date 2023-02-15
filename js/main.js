@@ -28,11 +28,22 @@ function goBtnClicked() {
 
 // Menu Functions
 function displayAll() {
-  outputEl.innerHTML = "Display All";
+  outputEl.innerHTML = "";
+  for (let i = 0; i < colors.length; i++) {
+    outputEl.innerHTML += `<div style="background-color: ${colors[i]};
+">${colors[i]}</div>`;
+  }
 }
 
 function displayStartingLetter() {
-  outputEl.innerHTML = "Display Starting Letter";
+  let startingLetter = prompt("enter a starting letter").toLocaleUpperCase;
+  outputEl.innerHTML = "";
+  for (let i = 0; i < colors.length; i++) {
+    if (colors[i][0] === startingLetter) {
+      outputEl.innerHTML += `<div style="background-color: ${colors[i]};
+">${colors[i]}</div>`;
+    }
+  }
 }
 
 function randomColor() {
