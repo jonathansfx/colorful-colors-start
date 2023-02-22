@@ -36,16 +36,22 @@ function displayAll() {
 }
 
 function displayStartingLetter() {
-  let startingLetter = prompt("enter a starting letter").toLocaleUpperCase;
+  let startLetter = prompt("enter a starting letter");
+  let count = 0;
+
   outputEl.innerHTML = "";
   for (let i = 0; i < colors.length; i++) {
-    if (colors[i][0] === startingLetter) {
+    if (colors[i][0] === startLetter) {
+      count++;
       outputEl.innerHTML += `<div style="background-color: ${colors[i]};
 ">${colors[i]}</div>`;
     }
   }
+  outputEl.innerHTML += `<p>Number of Colors: ${count}</p>`;
 }
 
 function randomColor() {
-  outputEl.innerHTML = "Random Color";
+  let randColor = randomElements(colors);
+  outputEl.innerHTML = `<div style="background-color: ${randColor};
+  ">${randColor}</div>`;
 }
